@@ -1,0 +1,19 @@
+import math
+sum=0
+n=int(input())
+seive=[True for i in range(n+1)]
+seive[0]=seive[1]=False
+x=int(math.sqrt(n))
+for i in range(2,x+1):
+    if seive[i]:
+        for j in range(i*i,n+1,i):
+            seive[j]=False
+for i in range(n+1):
+    if seive[i]:
+        sum+=i
+print(sum)
+
+
+output:
+6
+10
